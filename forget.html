@@ -1,0 +1,71 @@
+
+<%@page import="com.helper.Email.*"%>
+<%@ page import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+     <%
+    
+     Random randomGenerator = new Random();
+	int randomInt = randomGenerator.nextInt(1000000);
+	
+ %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Recover-Password</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="Images/shopping-cart_icon-icons.com_60593.png">
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex">
+          <!-- <img src="https://source.unsplash.com/1600x600/?computer,programming"> -->
+        </div>
+
+        <div class="card-body">
+          <h4 class="title text-center mt-4">
+            Recover Your Password
+          </h4>
+          <form class="form-box px-3" action="Forgetpass",method="POST">
+          
+           <div class="form-input">
+                <span><i class="fa fa-user"></i></span>
+                <input type="text" name="ffname" placeholder="Full Name" required>
+              </div>
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              <input type="email" name="femail" placeholder="Email Address" tabindex="10" required>
+              <input type="hidden" name="fotp" value=<%=randomInt%>>
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block text-uppercase">
+                Submit
+              </button>
+              
+            </div>
+           
+            <span style="color:#007bff;text-indent: 15em;"><i class="fa fa-arrow-left"></i></span>
+            <a href="login.jsp" class="register-link">Back To Login</a>
+           
+            </div>
+          
+
+            <hr class="my-4">
+        
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
